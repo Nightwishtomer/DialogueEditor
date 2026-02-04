@@ -1,0 +1,184 @@
+
+{
+    "dialog_id": "npc_1_intro1111111111",
+    "nodes": [
+        {
+            "id": "start",
+            "text": {
+                "en" : "Hello, stalker. What are you looking for?",
+                "de" : "Hallo, Stalker. Was suchst du?",
+                "ru" : "Привет, сталкер. Что ищешь?"
+            },
+            "options": [
+                {   
+                    "id": 0,
+                    "text": {
+                        "en" : "Cartridges",
+                        "de" : "Patronen",
+                        "ru" : "Патроны"
+                    },                   
+                    "next": "ammo"
+                },
+                {
+                    "id": 1,
+                    "text": {
+                        "en" : "Talk",
+                        "de" : "Sprechen",
+                        "ru" : "Разговор"
+                    },
+                    "next": [
+                        "last_news",
+                        "not_local",
+                        "why"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": {
+                        "en" : "Work",
+                        "de" : "Arbeit",
+                        "ru" : "Работа"
+                    },
+                    "next": "quest"
+                },
+                {
+                    "id": 3,
+                    "text": {
+                        "en" : "Nothing",
+                        "de" : "Nichts",
+                        "ru" : "Ничего"
+                    },
+                    "next": "end"
+                }
+            ],
+            "action": "1111"
+        },
+        {
+            "id": "last_news",
+            "text": {
+                "en" : "Have you heard the latest news?",
+                "de" : "Haben Sie die neuesten Nachrichten gehört?",
+                "ru" : "Вы слышали последние новости?"
+            },
+            "options": [
+                {
+                    "id": 0,
+                    "text": {
+                        "en" : "No..",
+                        "de" : "Nein",
+                        "ru" : "Нет"
+                    },                   
+                    "next": "end"
+                }
+            ],
+            "action": null
+        },
+        {
+            "id": "not_local",
+            "text": {
+                "en" : "I see you’re not from around here.",
+                "de" : "Ich sehe, Sie sind nicht von hier.",
+                "ru" : "Я вижу, вы не отсюда."
+            },          
+            "options": [
+                {
+                    "id": 0,
+                    "text": {
+                        "en" : "Yes",
+                        "de" : "Ja",
+                        "ru" : "Да"
+                    },
+                    "next": "end"
+                }
+            ],
+            "action": null
+        },
+        {
+            "id": "why",
+            "text": {
+                "en" : "What brought you here?",
+                "de" : "Was hat Sie hierher geführt?",
+                "ru" : "Что привело вас сюда?"
+            },
+            
+            
+            "options": [
+                {
+                    "id": 0,
+                    "text": {
+                        "en" : "Hothing",
+                        "de" : "Hothing",
+                        "ru" : "Ничего"
+                    },
+                    "next": "end"
+                }
+            ],
+            "action": null
+        },
+        {
+            "id": "ammo",
+            "text": {
+                "en" : "I have some ammo. But not for free..",
+                "de" : "Ich habe etwas Munition. Aber nicht umsonst..",
+                "ru" : "У меня есть кое-какие патроны. Но не даром.."
+            },
+            "options": [
+                {
+                    "id": 0,
+                    "text": {
+                        "en" : "How many?",
+                        "de" : "Wie viele?",
+                        "ru" : "Сколько?"
+                    },
+                    "next": "end"
+                }
+            ],
+            "action": null
+        },
+        {
+            "id": "quest",
+            "text": {
+                "en" : "There is one thing. A mutant has appeared in the catacombs...",
+                "de" : "Da ist eine Sache. In den Katakomben ist ein Mutant aufgetaucht ...",
+                "ru" : "Есть одно но: в катакомбах появился мутант..."
+            },
+            "options": [
+                {
+                    "id": 0,
+                    "text": {
+                        "en" : "I'm in!",
+                        "de" : "Ich bin dabei!",
+                        "ru" : "Я в деле!"
+                    },
+                    "next": "end"
+                },
+                {
+                    "id": 1,
+                    "text": {
+                        "en" : "Not now",
+                        "de" : "Nicht jetzt",
+                        "ru" : "Не сейчас"
+                    },
+                    "next": "end"
+                }
+            ],
+            "action": null
+        },
+        {
+            "id": "end",
+            "action": "exit_dialog"
+        }
+    ],
+    "actions": [
+        {
+            "id": "exit_dialog",
+            "function": "exit()",
+            "comment": "Exit from this Dialog"
+        },
+        {
+            "id": "trade_dialog",
+            "function": "trade(), exit()",
+            "comment": "Trade. and Exit from this Dialog"
+        }
+    ]
+}
